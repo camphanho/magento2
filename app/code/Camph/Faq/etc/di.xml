@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Camph\Faq\Api\FaqGroupRepositoryInterface" type="Camph\Faq\Model\FaqGroupRepository"/>
+	<preference for="Camph\Faq\Api\Data\FaqGroupInterface" type="Camph\Faq\Model\FaqGroup"/>
+	<preference for="Camph\Faq\Api\Data\FaqGroupSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Camph\Faq\Model\ResourceModel\FaqGroup\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">camph_faqgroup</argument>
+			<argument name="resourceModel" xsi:type="string">Camph\Faq\Model\ResourceModel\FaqGroup\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="camph_faqgroup_grid_data_source" xsi:type="string">Camph\Faq\Model\ResourceModel\FaqGroup\Grid\Collection</item>
+				<item name="camph_faq_grid_data_source" xsi:type="string">Camph\Faq\Model\ResourceModel\Faq\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<!--<virtualType name="Camph\Faq\Model\ResourceModel\Faq\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">camph_faq</argument>
+			<argument name="resourceModel" xsi:type="string">Camph\Faq\Model\ResourceModel\Faq\Collection</argument>
+		</arguments>
+	</virtualType>-->
+	<type name="Camph\Faq\Model\ResourceModel\Faq\Grid\Collection">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">camph_faq</argument>
+			<argument name="eventPrefix" xsi:type="string">camph_faq_grid_collection</argument>
+			<argument name="eventObject" xsi:type="string">camph_grid_collection</argument>
+			<argument name="resourceModel" xsi:type="string">Camph\Faq\Model\ResourceModel\Faq</argument>
+		</arguments>
+	</type>
+</config>
