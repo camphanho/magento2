@@ -21,7 +21,6 @@ class Camph extends \Magento\Framework\View\Element\Template
     ) {
         $this->faqCollectionFactory = $faqCollectionFactory;
         $this->faqGroupCollectionFactory = $faqGroupCollectionFactory;
-//        $this->scopeConfig = $context->getScopeConfig();
         parent::__construct($context);
     }
 
@@ -29,7 +28,7 @@ class Camph extends \Magento\Framework\View\Element\Template
     {
 
         $faqCollection = $this->faqCollectionFactory->create();
-
+        var_dump($faqCollection->getData());
         $faqCollection->addFieldToFilter('group', ['finset' => $group]);
         return $faqCollection;
     }
@@ -40,12 +39,4 @@ class Camph extends \Magento\Framework\View\Element\Template
         $faqGroupCollection->setOrder('sortorder', 'ASC');
         return $faqGroupCollection;
     }
-
-    /*public function getConfig($config)
-    {
-        return $this->scopeConfig->getValue(
-            $config,
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
-        );
-    }*/
 }
