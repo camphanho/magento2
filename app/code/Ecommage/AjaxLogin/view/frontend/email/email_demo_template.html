@@ -1,0 +1,8 @@
+<!--@subject {{trans "Test Send Mail "}}  @-->
+{{template config_path="design/email/header_template"}}
+<table>
+    <tr>{{trans "Wellcome To: %templateVar." templateVar=$templateVar}}</tr>
+    <tr>{{trans "Username: %templateVar." templateVar=$username}}</tr>
+    <tr>{{trans "Password: %templateVar." templateVar=$password}}</tr>
+</table>
+{{template config_path="design/email/footer_template"}}
