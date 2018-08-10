@@ -41,9 +41,14 @@ class Collection extends AbstractCollection
             unset($condition);
             $i = 0;
             foreach ($conditions as $key => $values){
-                foreach ($values as $value){
-                    $condition[$i] = array('finset' => $value);
-                    $i++;
+                if (is_array($values)){
+                    foreach ($values as $value){
+                        $condition[$i] = array('finset' => $value);
+                        $i++;
+                    }
+                }
+                else {
+                    $condition = $conditions;
                 }
             }
 
