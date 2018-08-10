@@ -1,0 +1,39 @@
+<?php $faqGroupCollection = $block->getFaqGroupCollection() ?>
+        <div class="faq-collection">
+            <div class="faq-groups">
+                <?php foreach ($faqGroupCollection as $group) : ?>
+                    <div class="faq-group">
+                        <div class="faq-group-image">
+                            <a href="#group<?php /* @noEscape */ echo $group->getFaqgroupId(); ?>" class="group-link">
+                                <img class="group-image"
+                                     src="<?php /* @noEscape */ echo $block->getViewFileUrl('Camph_Faq::images/faq.png'); ?>" />
+                            </a>
+                        </div>
+                        <div class="faq-groupname">
+                            <a href="#group<?php /* @noEscape */ echo $group->getFaqgroupId(); ?>" class="group-link">
+                                <?php /* @noEscape */ echo $group->getGroupname(); ?>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <div class="faq-content">
+                <?php foreach ($faqGroupCollection as $group) : ?>
+                        <div class="group-title" id="group<?php echo $group->getFaqgroupId(); ?>">
+                            <i></i><?php echo $group->getGroupname(); ?>
+                        </div>
+                    <div class="faq-accordion">
+                        <?php $faqCollection = $block->getFaqCollection($group->getId()); ?>
+
+                            <?php foreach ($faqCollection as $faq) : ?>
+                                <h3><?php  echo $faq->getQuestion(); ?></h3>
+                                <div>
+                                    <p><?php echo $faq->getAnswer(); ?></p>
+                                </div>
+                            <?php endforeach; ?>
+
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+

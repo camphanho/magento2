@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Camph::top_level" module="Camph_Faq" resource="Camph_Faq::Faq" sortOrder="11" title="FAQ"/>
+		<add action="camph_faq/faqgroup/index" id="Camph::camph_faqgroup" module="Camph_Faq" parent="Camph::top_level" resource="Camph_Forcelogin::forcelogin" sortOrder="10" title="Manage FAQGroup"/>
+		<add action="camph_faq/faq/index" id="Camph::camph_faq" module="Camph_Faq" parent="Camph::top_level" resource="Camph_Faq::Faq" sortOrder="20" title="Manage FAQ"/>
+	</menu>
+</config>
