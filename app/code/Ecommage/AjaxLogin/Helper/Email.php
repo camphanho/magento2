@@ -35,7 +35,7 @@ class Email extends \Magento\Framework\App\Helper\AbstractHelper
                 'email' => $this->escaper->escapeHtml('camphanho18021996@gmail.com'),
             ];
             $transport = $this->transportBuilder
-                ->setTemplateIdentifier('email_demo_template')
+                ->setTemplateIdentifier($data['template'])
                 ->setTemplateOptions(
                     [
                         'area' => \Magento\Framework\App\Area::AREA_FRONTEND,

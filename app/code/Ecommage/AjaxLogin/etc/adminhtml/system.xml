@@ -6,18 +6,13 @@
         </tab>
         <section id="email" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
-            <label>Bss Email Demo</label>
+            <label>Ecommage Email Demo</label>
             <tab>bss</tab>
             <resource>Ecommage_AjaxLogin::config_emaildemo</resource>
             <group id="demo" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Please Choose Your Email Template</label>
                 <field id="template" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Email Template Demo</label>
-                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
-                    <comment>Email template is chosen based on theme fallback when "Default" option is selected.</comment>
-                </field>
-                <field id="one" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Email Template One</label>
                     <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
                     <comment>Email template is chosen based on theme fallback when "Default" option is selected.</comment>
                 </field>
