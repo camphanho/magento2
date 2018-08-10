@@ -4,7 +4,10 @@ return [
         'Magento_Store' => 1,
         'Magento_Directory' => 1,
         'Magento_Eav' => 1,
+<<<<<<< HEAD
         'Camph_Faq' => 0,
+=======
+>>>>>>> ajaxlogin
         'Magento_Backend' => 1,
         'Ecommage_AjaxLogin' => 0,
         'Magento_Theme' => 1,
