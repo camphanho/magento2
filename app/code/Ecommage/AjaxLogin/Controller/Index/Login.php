@@ -22,6 +22,7 @@ class Login extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $data = $this->getRequest()->getParams();
+        $this->_eventManager->dispatch('ecommage_login_success',['data' => $data]);
         $result = $this->resultJsonFactory->create();
         $result->setData($data);
         return $result;

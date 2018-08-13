@@ -13,8 +13,8 @@ class Email extends \Magento\Framework\App\Helper\AbstractHelper
     protected $escaper;
     protected $transportBuilder;
     protected $logger;
-    protected $scopeConfig;
-
+    const path = 'email/demo/template';
+    const sender = 'camphanho18021996@gmail.com';
     public function __construct(
         Context $context,
         StateInterface $inlineTranslation,
@@ -32,12 +32,12 @@ class Email extends \Magento\Framework\App\Helper\AbstractHelper
 
     public function sendEmail($data)
     {
-        $template = $this->scopeConfig->getValue('email/demo/template', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $template = $this->scopeConfig->getValue($this::path, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
         try {
             $this->inlineTranslation->suspend();
             $sender = [
                 'name' => $this->escaper->escapeHtml('Test'),
-                'email' => $this->escaper->escapeHtml('camphanho18021996@gmail.com'),
+                'email' => $this->escaper->escapeHtml($this::sender),
             ];
             $transport = $this->transportBuilder
                 ->setTemplateIdentifier($template)
