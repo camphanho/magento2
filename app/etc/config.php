@@ -4,7 +4,7 @@ return [
         'Magento_Store' => 1,
         'Magento_Directory' => 1,
         'Magento_Eav' => 1,
-        'Camph_Faq' => 0,
+        'Camph_Faq' => 1,
         'Magento_Backend' => 1,
         'Ecommage_AjaxLogin' => 1,
         'Magento_Theme' => 1,
