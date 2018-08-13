@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6128f7d15b3d5ff60639d981cebb6d6",
+    "content-hash": "a66eb1694f8d85728c693f053e0ef1c8",
     "packages": [
         {
             "name": "amzn/amazon-pay-and-login-magento-2-module",
@@ -7208,6 +7208,83 @@
                 "psr-3"
             ],
             "time": "2017-06-19T01:22:40+00:00"
+        },
+        {
+            "name": "msp/common",
+            "version": "0.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magespecialist/m2-MSP_Common.git",
+                "reference": "602d02791d4881cb0d266d45f8c4532715a49ada"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magespecialist/m2-MSP_Common/zipball/602d02791d4881cb0d266d45f8c4532715a49ada",
+                "reference": "602d02791d4881cb0d266d45f8c4532715a49ada",
+                "shasum": ""
+            },
+            "require": {
+                "magento/magento-composer-installer": "*",
+                "php": "^7.0|^7.1"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MSP\\Common\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL 3.0"
+            ],
+            "time": "2017-09-01T09:06:11+00:00"
+        },
+        {
+            "name": "msp/devtools",
+            "version": "1.2.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magespecialist/m2-MSP_DevTools.git",
+                "reference": "d52341ab8d6308f6db63aca039fc09ccdbfc6d1d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magespecialist/m2-MSP_DevTools/zipball/d52341ab8d6308f6db63aca039fc09ccdbfc6d1d",
+                "reference": "d52341ab8d6308f6db63aca039fc09ccdbfc6d1d",
+                "shasum": ""
+            },
+            "require": {
+                "magento/magento-composer-installer": "*",
+                "msp/common": "*",
+                "php": "^7.0|^7.1"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MSP\\DevTools\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Riccardo Tempesta",
+                    "email": "riccardo.tempesta@magespecialist.it"
+                },
+                {
+                    "name": "Lorenzo Stramaccia",
+                    "email": "lorenzo.stramaccia@magespecialist.it"
+                }
+            ],
+            "time": "2018-05-18T15:24:58+00:00"
         },
         {
             "name": "oyejorge/less.php",
