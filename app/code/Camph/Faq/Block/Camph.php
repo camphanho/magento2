@@ -28,7 +28,7 @@ class Camph extends \Magento\Framework\View\Element\Template
     {
 
         $faqCollection = $this->faqCollectionFactory->create();
-        $faqCollection->addFieldToFilter('group', ['finset' => $group]);
+        $faqCollection->addGroupFilter('group', ['finset' => $group], false);
         return $faqCollection;
     }
 
