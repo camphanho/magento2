@@ -41,7 +41,7 @@
 <script type="text/javascript">
     require(['jquery'], function ($) {
         $(document).ready(function(){
-            $("#button_login").click(function(event){
+            $("#button_login").click(function(){
                 var data = $("form#form_login").serialize();
                 alert(data);
                 // sua lai url
@@ -55,23 +55,6 @@
                         console.log(data['password']);
                         $("#usr").text(data['username']);
                         $("#pass").text(data['password']);
-                    },
-                    error: function () {
-                        alert("error");
-                    }
-                })
-            });
-        });
-        $(document).ready(function(){
-            $("#button_login").click(function(){
-                var data = $("form#form_login").serialize();
-                jQuery.ajax({
-                    url: 'sendemail',
-                    type: "POST",
-                    data: data,
-                    showLoader: true,
-                    success: function () {
-                        console.log("ok");
                     },
                     error: function () {
                         alert("error");
