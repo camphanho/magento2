@@ -1,17 +1,14 @@
 <?php
 return [
     'modules' => [
+        'ADM_QuickDevBar' => 1,
         'Magento_Store' => 1,
         'Magento_Directory' => 1,
         'Magento_Eav' => 1,
         'Camph_Faq' => 1,
         'Magento_Backend' => 1,
-        'Magento_Theme' => 1,
-        'Magento_Customer' => 1,
-        'Magento_AdminNotification' => 1,
-        'MSP_Common' => 0,
-        'MSP_DevTools' => 0,
         'Ecommage_AjaxLogin' => 1,
+        'Ecommage_BackendTranslate' => 1,
         'Magento_Theme' => 1,
         'Magento_Customer' => 1,
         'Magento_AdminNotification' => 1,

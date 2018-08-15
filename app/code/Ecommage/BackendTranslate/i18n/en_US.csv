@@ -1,0 +1,58 @@
+Back,Trở lại
+"Delete FAQ","Delete FAQ"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+"Save and Continue Edit","Save and Continue Edit"
+"Save FAQ","Save FAQ"
+"Delete FAQgroup","Delete FAQgroup"
+"Save FAQgroup","Save FAQgroup"
+Camph,Camph
+FAQ,FAQ
+"You deleted the Faq.","You deleted the Faq."
+"We can't find a Faq to delete.","We can't find a Faq to delete."
+"This FAQ no longer exists.","This FAQ no longer exists."
+"Edit Faq","Edit Faq"
+"New FAQ","New FAQ"
+FAQs,FAQs
+"New Faq","New Faq"
+"Please correct the data sent.","Please correct the data sent."
+"A total of %1 FAQ(s) were deleted.","A total of %1 FAQ(s) were deleted."
+"You saved the FAQ.","You saved the FAQ."
+"Something went wrong while saving the FAQ.","Something went wrong while saving the FAQ."
+FAQgroup,FAQgroup
+"You deleted the Faqgroup.","You deleted the Faqgroup."
+"We can't find a Faqgroup to delete.","We can't find a Faqgroup to delete."
+"This FAQgroup no longer exists.","This FAQgroup no longer exists."
+"Edit Faqgroup","Edit Faqgroup"
+"New FAQGroup","New FAQGroup"
+FAQgroups,FAQgroups
+FAQGroup,FAQGroup
+"A total of %1 FAQGroup(s) were deleted.","A total of %1 FAQGroup(s) were deleted."
+"You saved the FAQgroup.","You saved the FAQgroup."
+"Something went wrong while saving the Faqgroup.","Something went wrong while saving the Faqgroup."
+"Could not save the faqGroup: %1","Could not save the faqGroup: %1"
+"FaqGroup with id ""%1"" does not exist.","FaqGroup with id ""%1"" does not exist."
+"Could not delete the FaqGroup: %1","Could not delete the FaqGroup: %1"
+"Could not save the faq: %1","Could not save the faq: %1"
+"Faq with id ""%1"" does not exist.","Faq with id ""%1"" does not exist."
+"Could not delete the Faq: %1","Could not delete the Faq: %1"
+Edit,Edit
+Delete,Delete
+"Delete ""${ $.$data.title }""","Delete ""${ $.$data.title }"""
+"Are you sure you wan't to delete a ""${ $.$data.title }"" record?","Are you sure you wan't to delete a ""${ $.$data.title }"" record?"
+"Delete ""${ $.$data.groupname }""","Delete ""${ $.$data.groupname }"""
+"Are you sure you wan't to delete a ""${ $.$data.groupname }"" record?","Are you sure you wan't to delete a ""${ $.$data.groupname }"" record?"
+"General Information","General Information"
+Question,Question
+Answer,Answer
+Group,Group
+"Sort Order","Sort Order"
+"Add New FAQ","Add New FAQ"
+"Delete Faq(s)","Delete Faq(s)"
+"Are you sure you wan't to delete selected Faq(s)?","Are you sure you wan't to delete selected Faq(s)?"
+ID,ID
+SortOrder,SortOrder
+"Group Name","Group Name"
+"Add New FAQGroup","Add New FAQGroup"
+"Delete FaqGroup(s)","Delete FaqGroup(s)"
+"Are you sure you wan't to delete selected FaqGroup(s)?","Are you sure you wan't to delete selected FaqGroup(s)?"
+Dashboard,Bang dieu khien

@@ -31,7 +31,8 @@
         "magento/module-swatches-sample-data": "100.2.*",
         "magento/sample-data-media": "100.2.*",
         "mageplaza/module-smtp": "^1.2",
-        "msp/devtools": "^1.2"
+        "msp/devtools": "^1.2",
+        "vpietri/adm-quickdevbar": "^0.1.12"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.2.0",
@@ -72,12 +73,16 @@
         }
     },
     "minimum-stability": "stable",
-    "repositories": [
-        {
+    "repositories": {
+        "magento": {
             "type": "composer",
             "url": "https://repo.magento.com/"
+        },
+        "quickdevbar": {
+            "type": "git",
+            "url": "git@github.com:vpietri/magento2-developer-quickdevbar.git"
         }
-    ],
+    },
     "extra": {
         "magento-force": "override"
     }
