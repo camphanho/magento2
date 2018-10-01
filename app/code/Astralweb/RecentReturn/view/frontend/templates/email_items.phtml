@@ -1,0 +1,33 @@
+<?php
+echo "Detail product:";
+$products = $block->getDatas();
+$cid = $products['cid'];
+$productName = $products['productname'];
+$productSku = $products['productsku'];
+?>
+<table style="width: 100%;table-layout: fixed;border-collapse: collapse;border: 3px solid purple;">
+    <thead>
+        <tr>
+            <th style="width: 30%;padding: 10px;border-bottom: 1px solid gray"><?= __('Product Id')?></th>
+            <th style="width: 30%;padding: 10px;border-bottom: 1px solid gray"><?= __('Product Name') ?></th>
+            <th style="width: 30%;padding: 10px;border-bottom: 1px solid gray"><?= __('SKU') ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        foreach ($cid as $id) {
+            echo "<tr>";
+            echo "<td style='padding: 10px;border-bottom: 1px solid gray'>";
+            echo $id;
+            echo "</td>";
+            echo "<td style='padding: 10px;border-bottom: 1px solid gray'>";
+            echo $productName[$id];
+            echo "</td>";
+            echo "<td style='padding: 10px;border-bottom: 1px solid gray'>";
+            echo $productSku[$id];
+            echo "</td>";
+            echo "</tr>";
+        }
+        ?>
+    </tbody>
+</table>

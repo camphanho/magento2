@@ -1,0 +1,13 @@
+<!--@subject {{trans "Return Order"}} @-->
+{{template config_path="design/email/header_template"}}
+
+<p>{{trans "Full Name: %name" name=$name}}</p>
+
+<p>{{trans "Email Address: %email" email=$email}}</p>
+
+<p>{{trans "Order Number: %order_id" order_id=$order_id}}</p>
+
+<p>{{trans "Customer Comment: %comment" comment=$message}}</p>
+
+{{layout area="frontend" handle="email_template"}}
+{{template config_path="design/email/footer_template"}}

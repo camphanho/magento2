@@ -1,0 +1,32 @@
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Welcome to %store_name" store_name=$store.getFrontendName()}} @-->
+<!--@vars {
+"var vendor.email":"Vendor Email",
+"var vendor.name":"Vendor Name"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<p class="greeting">{{trans "%name," name=$vendor.getName()}}</p>
+<p>{{trans "Welcome to %store_name. Your account is approved" store_name=$store.getFrontendName()}}</p>
+<p>{{trans "You must confirm your %customer_email email before you can sign in (link is exists 72 hours):" customer_email=$customer.email}}</p>
+
+<table class="button" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>
+            <table class="inner-wrapper" border="0" cellspacing="0" cellpadding="0" align="center">
+                <tr>
+                    <td align="center">
+                        <a href="{{var this.getUrl($store,'marketplace/seller/confirm/',[_query:[id:$customer.id,key:$vendor.ves_key_account,back_url:$back_url],_nosid:1])}}" target="_blank">{{trans "Confirm Your Account"}}</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

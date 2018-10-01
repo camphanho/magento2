@@ -1,0 +1,139 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: camph
+ * Date: 28/08/2018
+ * Time: 15:26
+ */
+?>
+<form id="return_order" action="<?= $this->getUrl('customer/account/sendmail') ?>"
+      data-mage-init='{
+          "validation":{
+		      "rules": {
+			      "cid": {
+				  "required":true
+			      }
+		      },
+		      "messages":{
+                  "cid": {
+                     "required": "This is a required field es."
+                  }
+			  }
+	      }
+      }'
+      data-hasrequired="<?= /* @escapeNotVerified */ __('* Required Fields') ?>"
+      method="POST">
+<div class="table-wrapper order-items">
+    <table class="data table table-order-items" id="my-orders-table" summary="<?= /* @escapeNotVerified */ __('Items Ordered') ?>">
+        <caption class="table-caption"><?= /* @escapeNotVerified */ __('Items Ordered') ?></caption>
+        <thead>
+        <?php if($block->isPagerDisplayed()): ?>
+            <tr>
+                <td colspan="5" data-block="order-items-pager-top" class="order-pager-wrapper order-pager-wrapper-top">
+                    <?= $block->getPagerHtml() ?>
+                </td>
+            </tr>
+        <?php endif ?>
+        <tr>
+            <input type="hidden" name="orderId" value="<?= $this->helper('Astralweb\RecentReturn\Helper\Returns')->getOrderId() ?>"/>
+            <th class="col checkbox"><input type="checkbox" id="selectAll"></th>
+            <th class="col name"><?= /* @escapeNotVerified */ __('Product Name') ?></th>
+            <th class="col sku"><?= /* @escapeNotVerified */ __('SKU') ?></th>
+            <th class="col price"><?= /* @escapeNotVerified */ __('Price') ?></th>
+            <th class="col qty"><?= /* @escapeNotVerified */ __('Qty') ?></th>
+            <th class="col subtotal"><?= /* @escapeNotVerified */ __('Subtotal') ?></th>
+        </tr>
+        </thead>
+        <?php $items = $block->getItems();?>
+        <?php $giftMessage = ''?>
+        <?php foreach ($items as $item): ?>
+
+            <?php if ($item->getParentItem()) continue; ?>
+            <tbody id="product-item">
+            <?= $block->getItemHtml($item) ?>
+            <?php if ($this->helper('Magento\GiftMessage\Helper\Message')->isMessagesAllowed('order_item', $item) && $item->getGiftMessageId()): ?>
+                <?php $giftMessage = $this->helper('Magento\GiftMessage\Helper\Message')->getGiftMessageForEntity($item); ?>
+                <tr>
+                    <td class="col options" colspan="5">
+                        <a href="#"
+                           id="order-item-gift-message-link-<?= /* @escapeNotVerified */ $item->getId() ?>"
+                           class="action show"
+                           aria-controls="order-item-gift-message-<?= /* @escapeNotVerified */ $item->getId() ?>"
+                           data-item-id="<?= /* @escapeNotVerified */ $item->getId() ?>">
+                            <?= /* @escapeNotVerified */ __('Gift Message') ?>
+                        </a>
+                        <?php $giftMessage = $this->helper('Magento\GiftMessage\Helper\Message')->getGiftMessageForEntity($item); ?>
+                        <div class="order-gift-message" id="order-item-gift-message-<?= /* @escapeNotVerified */ $item->getId() ?>" role="region" aria-expanded="false" tabindex="-1">
+                            <a href="#"
+                               title="<?= /* @escapeNotVerified */ __('Close') ?>"
+                               aria-controls="order-item-gift-message-<?= /* @escapeNotVerified */ $item->getId() ?>"
+                               data-item-id="<?= /* @escapeNotVerified */ $item->getId() ?>"
+                               class="action close">
+                                <?= /* @escapeNotVerified */ __('Close') ?>
+                            </a>
+                            <dl class="item-options">
+                                <dt class="item-sender"><strong class="label"><?= /* @escapeNotVerified */ __('From') ?></strong><?= $block->escapeHtml($giftMessage->getSender()) ?></dt>
+                                <dt class="item-recipient"><strong class="label"><?= /* @escapeNotVerified */ __('To') ?></strong><?= $block->escapeHtml($giftMessage->getRecipient()) ?></dt>
+                                <dd class="item-message"><?= /* @escapeNotVerified */ $this->helper('Magento\GiftMessage\Helper\Message')->getEscapedGiftMessage($item) ?></dd>
+                            </dl>
+                        </div>
+                    </td>
+                </tr>
+            <?php endif ?>
+            </tbody>
+        <?php endforeach; ?>
+        <tfoot>
+        <?php if($block->isPagerDisplayed()): ?>
+            <tr>
+                <td colspan="5" data-block="order-items-pager-bottom" class="order-pager-wrapper order-pager-wrapper-bottom">
+                    <?= $block->getPagerHtml() ?>
+                </td>
+            </tr>
+        <?php endif ?>
+        <?= $block->getChildHtml('order_totals') ?>
+        </tfoot>
+    </table>
+</div>
+
+    <input type="submit" value="send" id="submit" style="display: none"/>
+</form>
+<script type="text/javascript">
+
+    require(['jquery','mage/validation'], function ($) {
+        $(document).ready(function () {
+            $('#selectAll').click(function (e) {
+                var table= $(e.target).closest('table');
+                $('td input:checkbox',table).prop('checked',this.checked);
+            });
+            $(".is-required").click(function () {
+                var length = $('.is-required:not(:checked)').length;
+                if (length == 0){
+                    $('#selectAll').attr('checked', true);
+                }
+                else{
+                    $('#selectAll').attr('checked', false);
+                }
+            });
+            $('#btn_return').click(function () {
+                document.getElementById('submit').click();
+            });
+            $('#submit').click(function () {
+                if ($('#return_order').valid()== false){
+                    $('#message_required').css('display', 'block');
+                }
+            });
+        });
+    });
+</script>
+<?php if ($giftMessage): ?>
+    <script type="text/x-magento-init">
+    {
+        "a.action.show, a.action.close": {
+            "giftMessage": {}
+        }
+    }
+
+</script>
+
+<?php endif; ?>
+

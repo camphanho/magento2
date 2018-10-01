@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <smsforgotpassword>
+            <general>
+                <enabled>1</enabled>
+                <!--<auth_key>YW5kMDEzbmFyYTplMjIwMTA2Njgw</auth_key>-->
+                <api_url>http://api.infobip.com/sms/1/text/single</api_url>
+                <country_calling_code>886</country_calling_code>
+                <max_reset>5</max_reset>
+            </general>
+        </smsforgotpassword>
+    </default>
+</config>

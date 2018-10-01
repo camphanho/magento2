@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Vnecoms\Vendors\Model\Source\Status" type="Ecommage\MerchantAccount\Model\Source\Status" />
+    <preference for="Vnecoms\Vendors\Block\Adminhtml\Vendor\Edit" type="Ecommage\MerchantAccount\Block\Adminhtml\Vendor\Edit" />
+</config>
